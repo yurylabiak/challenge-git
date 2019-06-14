@@ -15,12 +15,20 @@ tape('should respond hello', (t) => {
   })
 })
 
+<<<<<<< 33e41571c2ceeb0e61b456a7678753a57fc6dd91
 tape('should respond user-agent', (t) => {
   const opts = { headers: { 'User-Agent': 'tape' } }
   jsonist.get(`${urlBase}/user-agent`, opts, (err, body) => {
     if (err) t.error(err)
 
     t.equal(body.ua, 'tape')
+=======
+tape('should respond b64', (t) => {
+  jsonist.get(`${urlBase}/b64/hello`, (err, body) => {
+    if (err) t.error(err)
+
+    t.equal(body.b64, 'aGVsbG8=')
+>>>>>>> feat: add base64 endpoint
     t.end()
   })
 })
